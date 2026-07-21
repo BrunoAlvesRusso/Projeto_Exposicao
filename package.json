@@ -1,0 +1,21 @@
+{
+  "name": "projeto_exposicao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoAlvesRusso/Projeto_Exposicao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/BrunoAlvesRusso/Projeto_Exposicao/issues"
+  },
+  "homepage": "https://github.com/BrunoAlvesRusso/Projeto_Exposicao#readme"
+}
