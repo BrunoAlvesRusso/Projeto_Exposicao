@@ -8,6 +8,10 @@ const app = express();
 
 const conn = require('./db/conn');
 
+// import models
+const Pensamento = require('./models/Pensamento');
+const User = require('./models/User');
+
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
@@ -21,7 +25,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store: new FileStore({
-    logFn: function() {},
+    logFn: function () { },
     path: require('path').join(require('os').tmpdir(), 'sessions')
   }),
   cookie: {
@@ -40,14 +44,17 @@ app.use(express.static('public'));
 
 // set session to res
 app.use((req, res, next) => {
-  if (req.session.userid) { 
+  if (req.session.userid) {
     res.locals.session = req.session;
   }
   next();
 });
 
-conn.sync().then(() => {
-  app.listen(3000);
-}).catch((err) => {
-  console.error('Erro ao sincronizar o banco de dados:', err);
-});
+conn
+  //.sync({force: true})
+  .sync()
+  .then(() => {
+    app.listen(3000);
+  }).catch((err) => {
+    console.error('Erro ao sincronizar o banco de dados:', err);
+  });
