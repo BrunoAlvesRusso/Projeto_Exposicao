@@ -29,8 +29,12 @@
     "express-handlebars": "^9.0.1",
     "express-session": "^1.19.0",
     "mysql2": "^3.23.2",
-    "nodemon": "^3.1.14",
     "sequelize": "^6.37.8",
     "session-file-store": "^1.5.0"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.10.3",
+    "nodemon": "^3.1.14"
   }
 }
